@@ -23,12 +23,36 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast.success("🎉 Your message has been sent successfully!");
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/aadityarana900@gmail.com", {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: "New Contact Form Submission",
+          _template: "table"
+        })
+      });
+
+      const data = await response.json();
+      
+      if (data.success === "true") {
+        toast.success("🎉 Your message has been sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error("Submission failed");
+      }
+    } catch (error) {
+      toast.error("❌ Submission failed. Please try again.");
+      console.error("Form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -66,6 +90,9 @@ const ContactForm = () => {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" />
+                
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <FaUser className="text-gray-400" />

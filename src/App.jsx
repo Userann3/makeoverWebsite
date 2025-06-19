@@ -7,11 +7,13 @@ import Services from './pages/Services'
 import Portfolio from './pages/Portfolio'
 import Learn from './pages/Learn'
 import Contact from './pages/Contact'
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   return (
     <>
       <BrowserRouter>
+      <ScrollToTop/>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/about' element={<About/>}/>

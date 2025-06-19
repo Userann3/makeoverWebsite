@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const services = [
   {
     title: "Face Makeup",
@@ -71,9 +71,11 @@ const MakeupServices = () => {
 
         {/* CTA Button */}
         <div className="text-center mt-16">
+            <Link to='/services'>
           <button className="bg-rose-500 hover:bg-rose-600 text-white px-8 py-3 rounded-full font-medium transition duration-300 transform hover:scale-105 shadow-lg shadow-rose-200">
             VIEW ALL SERVICES
           </button>
+          </Link>
         </div>
       </div>
     </section>
