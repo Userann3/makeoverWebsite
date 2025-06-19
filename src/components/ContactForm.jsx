@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaPaperPlane, FaUser, FaEnvelope, FaComment } from "react-icons/fa";
+import { FaPaperPlane, FaUser, FaEnvelope, FaComment, FaMapMarkerAlt, FaPhone, FaClock } from "react-icons/fa";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,30 @@ const ContactForm = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        when: "beforeChildren"
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
 
   const handleChange = (e) => {
     setFormData((prev) => ({
@@ -56,43 +81,116 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="w-full bg-gradient-to-br from-rose-50 to-indigo-50 py-16 md:py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Contact Image */}
-          <div className="relative h-full rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
-              alt="Makeup artist at work"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent"></div>
-            <div className="absolute bottom-8 left-8 right-8 text-white">
-              <h3 className="text-2xl font-bold mb-2">Let's Create Something Beautiful</h3>
-              <p className="text-rose-200">Professional makeup services tailored to your unique style</p>
-            </div>
-          </div>
+    <section className="w-full bg-gradient-to-br from-rose-50 to-indigo-50 py-16 px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Page Header */}
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Get In <span className="text-rose-500">Touch</span>
+          </h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Have questions or ready to book your appointment? We'd love to hear from you!
+          </p>
+        </motion.div>
 
-          {/* Right Side - Contact Form */}
-          <div className="bg-white p-8 md:p-10 rounded-2xl shadow-xl relative">
-            {/* Decorative elements */}
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-rose-100 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-indigo-100 rounded-full mix-blend-multiply filter blur-xl opacity-20"></div>
-            
-            <div className="relative z-10">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-2">
-                  Contact <span className="text-rose-500">Me</span>
-                </h2>
-                <p className="text-gray-600">
-                  Have a question or want to book an appointment? Fill out the form below.
-                </p>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Contact Information */}
+          <motion.div 
+            className="bg-white p-8 rounded-2xl shadow-lg"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+          >
+            <motion.div variants={itemVariants} className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
+              
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="bg-rose-100 p-3 rounded-full mr-4">
+                    <FaMapMarkerAlt className="text-rose-500 text-lg" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900">Our Location</h3>
+                    <p className="text-gray-600">123 Beauty Street, Makeup City</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-indigo-100 p-3 rounded-full mr-4">
+                    <FaPhone className="text-indigo-500 text-lg" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900">Phone Number</h3>
+                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-purple-100 p-3 rounded-full mr-4">
+                    <FaEnvelope className="text-purple-500 text-lg" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900">Email Address</h3>
+                    <p className="text-gray-600">contact@beautyexample.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="bg-amber-100 p-3 rounded-full mr-4">
+                    <FaClock className="text-amber-500 text-lg" />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900">Working Hours</h3>
+                    <p className="text-gray-600">Mon-Fri: 9AM - 6PM</p>
+                    <p className="text-gray-600">Sat: 10AM - 4PM</p>
+                  </div>
+                </div>
               </div>
+            </motion.div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" />
-                
+            {/* Social Media Links */}
+            <motion.div variants={itemVariants}>
+              <h3 className="font-medium text-gray-900 mb-4">Follow Us</h3>
+              <div className="flex space-x-4">
+                {['Instagram', 'Facebook', 'Twitter'].map((social) => (
+                  <motion.a
+                    key={social}
+                    href="#"
+                    className="bg-gray-100 hover:bg-rose-100 p-3 rounded-full transition-colors"
+                    whileHover={{ y: -3 }}
+                  >
+                    <span className="sr-only">{social}</span>
+                    <div className="w-5 h-5 bg-gray-400 rounded-full"></div>
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div 
+            className="bg-white p-8 rounded-2xl shadow-lg lg:col-span-2"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+          >
+            <motion.div variants={itemVariants} className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
+              <p className="text-gray-600">Fill out the form below and we'll get back to you as soon as possible.</p>
+            </motion.div>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" />
+              
+              <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <FaUser className="text-gray-400" />
@@ -122,26 +220,30 @@ const ContactForm = () => {
                     className="w-full border border-gray-200 pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-300 focus:border-transparent"
                   />
                 </div>
+              </motion.div>
 
-                <div className="relative">
-                  <div className="absolute top-3 left-3">
-                    <FaComment className="text-gray-400" />
-                  </div>
-                  <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows="5"
-                    required
-                    className="w-full border border-gray-200 pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-300 focus:border-transparent"
-                  />
+              <motion.div variants={itemVariants} className="relative">
+                <div className="absolute top-3 left-3">
+                  <FaComment className="text-gray-400" />
                 </div>
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows="5"
+                  required
+                  className="w-full border border-gray-200 pl-10 pr-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-300 focus:border-transparent"
+                />
+              </motion.div>
 
-                <button
+              <motion.div variants={itemVariants}>
+                <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-rose-500 hover:bg-rose-600 text-white py-3 px-6 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-rose-200 flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white py-3 px-6 rounded-lg font-medium shadow-lg shadow-rose-200/50 flex items-center justify-center gap-2 transition-all"
+                  whileHover={{ scale: 1.01 }}
+                  whileTap={{ scale: 0.99 }}
                 >
                   {isSubmitting ? (
                     <>
@@ -156,11 +258,30 @@ const ContactForm = () => {
                       <FaPaperPlane /> Send Message
                     </>
                   )}
-                </button>
-              </form>
+                </motion.button>
+              </motion.div>
+            </form>
+          </motion.div>
+        </div>
+
+        {/* Map Section */}
+        <motion.div 
+          className="mt-12 bg-white rounded-2xl shadow-lg overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+        >
+          <div className="h-64 md:h-80 w-full bg-gray-200 relative">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center p-6 bg-white rounded-lg shadow-md">
+                <FaMapMarkerAlt className="mx-auto text-rose-500 text-3xl mb-2" />
+                <h3 className="font-bold text-gray-900">Our Studio Location</h3>
+                <p className="text-gray-600">123 Beauty Street, Makeup City</p>
+              </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Toast container */}

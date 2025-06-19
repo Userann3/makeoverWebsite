@@ -18,7 +18,7 @@ export default function Home() {
     <MakeupServices/>
     <CreativeWorks/>
     {/* <MakeupClasses/> */}
-    <ContactForm/>
+    {/* <ContactForm/> */}
     <TestimonialSection/>
     <Footer/>
     </>

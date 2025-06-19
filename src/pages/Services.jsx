@@ -4,6 +4,7 @@ import NavigationForServices from '../components/NavigationForServices'
 import Footer from '../components/Footer'
 import AboutSection from '../components/AboutSection'
 import MakeupServices from '../components/MakeupServices'
+import ServicesInDetail from '../components/ServicesInDetail'
 
 export default function Services() {
   return (
@@ -11,6 +12,7 @@ export default function Services() {
     <Navbar/>
     <NavigationForServices/>
     <MakeupServices/>
+    <ServicesInDetail/>
     <Footer/>
     </>
   )
