@@ -6,6 +6,8 @@ import AboutSection from '../components/AboutSection'
 import MakeupServices from '../components/MakeupServices'
 import CreativeWorks from '../components/CreativeWorks'
 import TestimonialSection from '../components/TestimonialSection'
+import ContactForm from '../components/ContactForm'
+import MakeupClasses from '../components/MakeupClasses'
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
     <AboutSection/>
     <MakeupServices/>
     <CreativeWorks/>
+    {/* <MakeupClasses/> */}
+    <ContactForm/>
     <TestimonialSection/>
     <Footer/>
     </>

@@ -5,6 +5,8 @@ import './App.css'
 import About from './pages/About'
 import Services from './pages/Services'
 import Portfolio from './pages/Portfolio'
+import Learn from './pages/Learn'
+import Contact from './pages/Contact'
 
 export default function App() {
   return (
@@ -15,6 +17,8 @@ export default function App() {
           <Route path='/about' element={<About/>}/>
           <Route path='/services' element={<Services/>}/>
           <Route path='/portfolio' element={<Portfolio/>}/>
+          <Route path='/Learn' element={<Learn/>}/>
+          <Route path='/contact' element={<Contact/>}/>
         </Routes>
       </BrowserRouter>
     </>

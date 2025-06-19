@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Navigation = ({title , current}) => {
   return (
-    <section className="w-full h-[40vh] md:h-[50vh] relative flex items-center justify-center overflow-hidden bg-gradient-to-r from-rose-900/30 to-indigo-900/30">
+    <section className="hidden md:flex w-full h-[40vh] md:h-[50vh] relative items-center justify-center overflow-hidden bg-gradient-to-r from-rose-900/30 to-indigo-900/30">
       {/* Left BG image (makeup products) */}
       <div
         className="absolute top-0 left-0 w-1/2 h-full bg-cover bg-center bg-no-repeat"
