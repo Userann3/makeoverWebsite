@@ -17,7 +17,7 @@ export default function Home() {
     <AboutSection/>
     <MakeupServices/>
     <CreativeWorks/>
-    {/* <MakeupClasses/> */}
+    <MakeupClasses/>
     {/* <ContactForm/> */}
     <TestimonialSection/>
     <Footer/>

@@ -1,6 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import pawan from "../assets/makeup/pawan.JPG";
+import pawanAward from "../assets/pawan/pawanAward.jpeg";
+import pawan3 from "../assets/pawan/pawan3.jpeg";
+
 
 const AboutSection = () => {
   // Animation variants
@@ -65,14 +69,14 @@ const AboutSection = () => {
         <div className="flex gap-4 h-full">
           <div className="w-1/2 flex flex-col gap-4">
             <motion.img
-              src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+              src={pawanAward}
               alt="Makeup artist working"
               className="rounded-2xl w-full object-cover h-64 shadow-lg"
               variants={imageVariants}
               whileHover={{ scale: 1.02 }}
             />
             <motion.img
-              src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+              src={pawan3}
               alt="Makeup products"
               className="rounded-2xl w-full object-cover h-48 shadow-lg"
               variants={imageVariants}
@@ -82,7 +86,7 @@ const AboutSection = () => {
           </div>
           <div className="w-1/2 relative">
             <motion.img
-              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+              src={pawan}
               alt="Professional makeup artist smiling"
               className="rounded-2xl w-full object-cover h-full shadow-lg"
               variants={imageVariants}
@@ -95,7 +99,7 @@ const AboutSection = () => {
               variants={badgeVariants}
               whileHover={{ rotate: 5 }}
             >
-              <span className="text-3xl font-bold">30+</span>
+              <span className="text-3xl font-bold">12+</span>
               <span className="text-xs uppercase tracking-wider">Years Experience</span>
             </motion.div>
           </div>
@@ -122,7 +126,7 @@ const AboutSection = () => {
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
               </div>
-              <span className="text-gray-700">Certified professional with 30+ years of experience</span>
+              <span className="text-gray-700">Certified professional with 12+ years of experience</span>
             </motion.li>
             <motion.li variants={itemVariants} className="flex items-start gap-3">
               <div className="bg-rose-100 p-1 rounded-full mt-1">

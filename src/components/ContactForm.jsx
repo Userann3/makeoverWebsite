@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaPaperPlane, FaUser, FaEnvelope, FaComment, FaMapMarkerAlt, FaPhone, FaClock } from "react-icons/fa";
+import { FaPaperPlane, FaUser, FaEnvelope, FaComment, FaMapMarkerAlt, FaPhone, FaClock, FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -49,9 +49,9 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/aadityarana900@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/pawansainimakeovers@gmail.com", {
         method: "POST",
-        headers: { 
+        headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
@@ -65,7 +65,7 @@ const ContactForm = () => {
       });
 
       const data = await response.json();
-      
+
       if (data.success === "true") {
         toast.success("🎉 Your message has been sent successfully!");
         setFormData({ name: "", email: "", message: "" });
@@ -84,7 +84,7 @@ const ContactForm = () => {
     <section className="w-full bg-gradient-to-br from-rose-50 to-indigo-50 py-16 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Page Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ const ContactForm = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information */}
-          <motion.div 
+          <motion.div
             className="bg-white p-8 rounded-2xl shadow-lg"
             initial="hidden"
             whileInView="visible"
@@ -109,7 +109,7 @@ const ContactForm = () => {
           >
             <motion.div variants={itemVariants} className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="bg-rose-100 p-3 rounded-full mr-4">
@@ -158,23 +158,38 @@ const ContactForm = () => {
             <motion.div variants={itemVariants}>
               <h3 className="font-medium text-gray-900 mb-4">Follow Us</h3>
               <div className="flex space-x-4">
-                {['Instagram', 'Facebook', 'Twitter'].map((social) => (
-                  <motion.a
-                    key={social}
-                    href="#"
-                    className="bg-gray-100 hover:bg-rose-100 p-3 rounded-full transition-colors"
-                    whileHover={{ y: -3 }}
-                  >
-                    <span className="sr-only">{social}</span>
-                    <div className="w-5 h-5 bg-gray-400 rounded-full"></div>
-                  </motion.a>
-                ))}
+                <motion.a
+                  href="#"
+                  className="bg-gradient-to-br from-pink-500 to-purple-600 text-white p-3 rounded-full transition-colors"
+                  whileHover={{ y: -3 }}
+                >
+                  <span className="sr-only">Instagram</span>
+                  <FaInstagram className="text-lg" />
+                </motion.a>
+
+                <motion.a
+                  href="#"
+                  className="bg-red-600 text-white p-3 rounded-full transition-colors"
+                  whileHover={{ y: -3 }}
+                >
+                  <span className="sr-only">YouTube</span>
+                  <FaYoutube className="text-lg" />
+                </motion.a>
+
+                <motion.a
+                  href="#"
+                  className="bg-blue-600 text-white p-3 rounded-full transition-colors"
+                  whileHover={{ y: -3 }}
+                >
+                  <span className="sr-only">LinkedIn</span>
+                  <FaLinkedin className="text-lg" />
+                </motion.a>
               </div>
             </motion.div>
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div 
+          <motion.div
             className="bg-white p-8 rounded-2xl shadow-lg lg:col-span-2"
             initial="hidden"
             whileInView="visible"
@@ -189,7 +204,7 @@ const ContactForm = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_next" value="https://yourdomain.com/thank-you" />
-              
+
               <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -265,21 +280,24 @@ const ContactForm = () => {
         </div>
 
         {/* Map Section */}
-        <motion.div 
+        {/* Map Section */}
+        <motion.div
           className="mt-12 bg-white rounded-2xl shadow-lg overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <div className="h-64 md:h-80 w-full bg-gray-200 relative">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center p-6 bg-white rounded-lg shadow-md">
-                <FaMapMarkerAlt className="mx-auto text-rose-500 text-3xl mb-2" />
-                <h3 className="font-bold text-gray-900">Our Studio Location</h3>
-                <p className="text-gray-600">123 Beauty Street, Makeup City</p>
-              </div>
-            </div>
+          <div className="h-64 md:h-80 w-full">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.60661962657!2d77.3084851760683!3d28.40094719455855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdc4aeb65f223%3A0xde9dc17e7ab5c3ef!2sPawan%20Saini%20Makeovers!5e0!3m2!1sen!2sin!4v1750662194377!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </motion.div>
       </div>

@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import pawanMain from '../assets/pawan/pawanMain.jpeg'
+import pawan1 from '../assets/pawan/pawan1.jpeg'
+import pawan2 from '../assets/pawan/pawan2.jpg'
+import pawan3 from '../assets/pawan/pawan3.jpeg'
+import pawan4 from '../assets/pawan/pawan4.jpeg'
+import { AnimatePresence } from "framer-motion";
+
+
+// Sample beauty/makeup images from Unsplash that match the color theme
+const sliderImages = [
+  pawanMain,
+  pawan1,
+  pawan2,
+  pawan3,
+  pawan4
+];
 
 const Hero = () => {
-  // Animation variants
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Auto-rotate images every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === sliderImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Animation variants (keeping all your original animations)
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -51,6 +79,13 @@ const Hero = () => {
     }
   };
 
+  // New animation for image transitions
+  const imageTransitionVariants = {
+    enter: { opacity: 0, scale: 0.9 },
+    center: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 1.1 }
+  };
+
   return (
     <section className="w-full min-h-screen bg-gradient-to-r from-rose-50 to-indigo-50 relative overflow-hidden">
       {/* Background decorative elements */}
@@ -79,7 +114,7 @@ const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center justify-between relative z-10">
-        {/* Left side - Text content */}
+        {/* Left side - Text content (unchanged) */}
         <motion.div
           className="md:w-1/2 mb-12 md:mb-0"
           variants={containerVariants}
@@ -90,7 +125,7 @@ const Hero = () => {
             Professional Makeup Artist
           </motion.p>
           <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
-            Beauty Crafted <br className="hidden md:block" /> 
+            Beauty Crafted <br className="hidden md:block" />
             <span className="text-rose-500">With Passion</span>
           </motion.h1>
           <motion.p variants={itemVariants} className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
@@ -118,20 +153,42 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Right side - Image */}
+        {/* Right side - Image Slider */}
+
         <motion.div
           className="md:w-1/2 flex justify-center"
           variants={imageVariants}
           initial="hidden"
           animate="visible"
         >
-          <div className="relative">
-            <motion.img 
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" 
-              alt="Professional woman smiling" 
-              className="w-full max-w-md rounded-lg shadow-2xl z-10 relative border-8 border-white"
-              whileHover={{ scale: 1.02 }}
-            />
+          <div className="relative w-full max-w-md h-auto">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentImageIndex}
+                src={sliderImages[currentImageIndex]}
+                alt="Professional makeup examples"
+                className="w-full rounded-lg shadow-2xl z-10 relative border-8 border-white"
+                variants={imageTransitionVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                whileHover={{ scale: 1.02 }}
+              />
+            </AnimatePresence>
+
+            {/* Image slider indicators */}
+            <div className="flex justify-center mt-4 space-x-2">
+              {sliderImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-colors ${index === currentImageIndex ? 'bg-rose-500' : 'bg-gray-300'}`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+
             <motion.div
               className="absolute -bottom-6 -right-6 w-full h-full border-4 border-rose-300 rounded-lg z-0"
               initial={{ x: -20, y: -20, opacity: 0 }}
@@ -140,6 +197,8 @@ const Hero = () => {
             />
           </div>
         </motion.div>
+
+
       </div>
     </section>
   );

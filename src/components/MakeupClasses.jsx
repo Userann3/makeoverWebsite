@@ -104,16 +104,16 @@ const MakeupClasses = () => {
                   ))}
                 </div>
                 
-                <button className={`mt-8 w-full py-3 px-6 rounded-lg font-medium transition-all ${course.popular ? "bg-rose-500 hover:bg-rose-600 text-white" : "bg-white text-rose-500 border border-rose-500 hover:bg-rose-50"}`}>
+                {/* <button className={`mt-8 w-full py-3 px-6 rounded-lg font-medium transition-all ${course.popular ? "bg-rose-500 hover:bg-rose-600 text-white" : "bg-white text-rose-500 border border-rose-500 hover:bg-rose-50"}`}>
                   Enroll Now
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
         </div>
 
         {/* Personal Note */}
-        <div className="mt-16 bg-white p-8 rounded-xl shadow-md max-w-4xl mx-auto border-l-4 border-rose-400">
+        {/* <div className="mt-16 bg-white p-8 rounded-xl shadow-md max-w-4xl mx-auto border-l-4 border-rose-400">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">A Personal Note From Me</h3>
           <p className="text-gray-700 mb-4">
             Teaching makeup artistry is my passion. I remember my first class where I struggled with blending - now I get to help students overcome those same challenges. My approach focuses on:
@@ -139,7 +139,7 @@ const MakeupClasses = () => {
           <p className="text-gray-700 mt-4">
             All courses include my signature technique handbook and product recommendations. I can't wait to welcome you to my studio!
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

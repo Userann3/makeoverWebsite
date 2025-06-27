@@ -1,6 +1,7 @@
 import React from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaInstagram, FaFacebookF, FaTwitter, FaPinterestP } from "react-icons/fa";
 import LOGO2 from '../assets/LOGO2.png'
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="w-full bg-gradient-to-b from-rose-50 to-indigo-50 text-gray-900 py-16">
@@ -21,18 +22,18 @@ const Footer = () => {
             natural features for any occasion.
           </p>
           <div className="flex gap-4">
-            <a href="#" className="text-rose-500 hover:text-rose-600 transition">
+            <Link to={""} className="text-rose-500 hover:text-rose-600 transition">
               <FaInstagram className="text-xl" />
-            </a>
-            <a href="#" className="text-rose-500 hover:text-rose-600 transition">
+            </Link>
+            <Link to={""} className="text-rose-500 hover:text-rose-600 transition">
               <FaFacebookF className="text-xl" />
-            </a>
-            <a href="#" className="text-rose-500 hover:text-rose-600 transition">
+            </Link>
+            <Link to={""} className="text-rose-500 hover:text-rose-600 transition">
               <FaTwitter className="text-xl" />
-            </a>
-            <a href="#" className="text-rose-500 hover:text-rose-600 transition">
+            </Link>
+            <Link to={""} className="text-rose-500 hover:text-rose-600 transition">
               <FaPinterestP className="text-xl" />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -41,19 +42,19 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-6 text-gray-900 uppercase tracking-wider">Quick Links</h3>
           <ul className="space-y-3">
             <li>
-              <a href="#" className="text-gray-700 hover:text-rose-500 transition">Home</a>
+              <Link to={"/"} className="text-gray-700 hover:text-rose-500 transition">Home</Link>
             </li>
             <li>
-              <a href="#" className="text-gray-700 hover:text-rose-500 transition">About Us</a>
+              <Link to={"/about"} className="text-gray-700 hover:text-rose-500 transition">About Us</Link>
             </li>
             <li>
-              <a href="#" className="text-gray-700 hover:text-rose-500 transition">Services</a>
+              <Link to={"/services"} className="text-gray-700 hover:text-rose-500 transition">Services</Link>
             </li>
             <li>
-              <a href="#" className="text-gray-700 hover:text-rose-500 transition">Portfolio</a>
+              <Link to={"/portfolio"} className="text-gray-700 hover:text-rose-500 transition">Portfolio</Link>
             </li>
             <li>
-              <a href="#" className="text-gray-700 hover:text-rose-500 transition">Contact</a>
+              <Link to={"/contact"} className="text-gray-700 hover:text-rose-500 transition">Contact</Link>
             </li>
           </ul>
         </div>
@@ -63,20 +64,20 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-6 text-gray-900 uppercase tracking-wider">Our Services</h3>
           <ul className="space-y-3">
             <li>
-              <a href="#" className="text-gray-700 hover:text-rose-500 transition">Bridal Makeup</a>
+              <Link to={"/services"} className="text-gray-700 hover:text-rose-500 transition">Bridal Makeup</Link>
             </li>
             <li>
-              <a href="#" className="text-gray-700 hover:text-rose-500 transition">Editorial Makeup</a>
+              <Link to={"/services"} className="text-gray-700 hover:text-rose-500 transition">Face Makeup</Link>
             </li>
             <li>
-              <a href="#" className="text-gray-700 hover:text-rose-500 transition">Special Effects</a>
+              <Link to={"/services"} className="text-gray-700 hover:text-rose-500 transition">Eye Effects</Link>
             </li>
             <li>
-              <a href="#" className="text-gray-700 hover:text-rose-500 transition">Makeup Lessons</a>
+              <Link to={"/services"} className="text-gray-700 hover:text-rose-500 transition">Hair Lessons</Link>
             </li>
-            <li>
-              <a href="#" className="text-gray-700 hover:text-rose-500 transition">Skincare</a>
-            </li>
+            {/* <li>
+              <Link to={"/services"} className="text-gray-700 hover:text-rose-500 transition">Skincare</Link>
+            </li> */}
           </ul>
         </div>
 
@@ -94,13 +95,13 @@ const Footer = () => {
             <li className="flex items-start gap-3">
               <FaEnvelope className="text-rose-500 mt-1 flex-shrink-0" />
               <span className="text-gray-700">
-                info@glamourmakeup.com 
+                pawansainimakeovers@gmail.com
               </span>
             </li>
             <li className="flex items-start gap-3">
               <FaMapMarkerAlt className="text-rose-500 mt-1 flex-shrink-0" />
               <span className="text-gray-700">
-                1247/Plot No. 39, <br />
+                Metro Station, D-20A Sarpanch Colony, NH-19, near by Neelam Chowk, Ajronda, Faridabad, Haryana 121007 <br />
                 LHB Colony, Kanpur
               </span>
             </li>
@@ -113,7 +114,7 @@ const Footer = () => {
           <div className="rounded-xl overflow-hidden shadow-lg border-4 border-white">
             <iframe
               title="Studio Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.867026964454!2d-111.92263768479643!3d33.58193668073017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b739e1ad6e2ff%3A0x1cb3db9c5e1777e4!2sPlexus%20Worldwide!5e0!3m2!1sen!2sin!4v1688720564917!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.60661962657!2d77.3084851760683!3d28.40094719455855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdc4aeb65f223%3A0xde9dc17e7ab5c3ef!2sPawan%20Saini%20Makeovers!5e0!3m2!1sen!2sin!4v1750662194377!5m2!1sen!2sin"
               width="100%"
               height="200"
               style={{ border: 0 }}

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaRegStar, FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ServicesInDetail = () => {
   // Animation variants
@@ -94,7 +95,7 @@ const ServicesInDetail = () => {
     <section className="w-full bg-gradient-to-br from-rose-50 to-indigo-50 py-16 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -109,7 +110,7 @@ const ServicesInDetail = () => {
         </motion.div>
 
         {/* Services */}
-        <motion.div 
+        <motion.div
           className="space-y-24"
           initial="hidden"
           whileInView="visible"
@@ -117,7 +118,7 @@ const ServicesInDetail = () => {
           variants={containerVariants}
         >
           {services.map((service, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               className={`bg-white rounded-2xl shadow-xl overflow-hidden ${index % 2 === 0 ? '' : ''}`}
               variants={itemVariants}
@@ -169,13 +170,13 @@ const ServicesInDetail = () => {
                   </div>
 
                   <div className="flex flex-wrap gap-3">
-                    <motion.button
+                    {/* <motion.button
                       className="px-6 py-2 bg-rose-500 hover:bg-rose-600 text-white rounded-lg font-medium shadow-md shadow-rose-200/50"
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.98 }}
                     >
                       Book Now
-                    </motion.button>
+                    </motion.button> */}
                     {/* <motion.button
                       className="px-6 py-2 border border-gray-300 hover:bg-gray-50 text-gray-700 rounded-lg font-medium"
                       whileHover={{ scale: 1.03 }}
@@ -204,7 +205,7 @@ const ServicesInDetail = () => {
         </motion.div>
 
         {/* CTA Section */}
-        <motion.div 
+        <motion.div
           className="mt-24 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -217,13 +218,14 @@ const ServicesInDetail = () => {
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-6">
             Book a consultation and let's create your perfect look together
           </p>
-          <motion.button
-            className="px-8 py-3 bg-gradient-to-r from-rose-500 to-indigo-500 hover:from-rose-600 hover:to-indigo-600 text-white rounded-lg font-medium shadow-lg shadow-rose-200/50"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Schedule Your Appointment
-          </motion.button>
+          <Link to={"/contact"}>
+            <motion.button
+              className="px-8 py-3 bg-gradient-to-r from-rose-500 to-indigo-500 hover:from-rose-600 hover:to-indigo-600 text-white rounded-lg font-medium shadow-lg shadow-rose-200/50"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Contact us now
+            </motion.button></Link>
         </motion.div>
       </div>
     </section>

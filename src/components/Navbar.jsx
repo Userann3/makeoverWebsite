@@ -41,10 +41,10 @@ const Navbar = () => {
             PORTFOLIO
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
           </NavLink>
-          {/* <NavLink to={'/LEARN'} className="hover:text-rose-600 transition relative group">
+          <NavLink to={'/LEARN'} className="hover:text-rose-600 transition relative group">
             LEARN
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
-          </NavLink> */}
+          </NavLink>
         </nav>
 
         {/* Contact Button */}

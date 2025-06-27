@@ -1,26 +1,30 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import bride from '../assets/makeup/bride.PNG';
+import bride2 from '../assets/makeup/bride2.JPG';
+import eye from '../assets/makeup/eye.JPG';
+import hair from '../assets/makeup/hair.JPG';
 
 const services = [
   {
     title: "Face Makeup",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80",
+    image: bride,
     shortDesc: "Flawless complexion enhancement"
   },
   {
     title: "Eye Makeup",
-    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    image: eye,
     shortDesc: "Dramatic or natural eye looks"
   },
   {
     title: "Hair Styling",
-    image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+    image: hair,
     shortDesc: "Elegant updos to glamorous curls"
   },
   {
     title: "Bridal Makeup",
-    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80",
+    image: bride2,
     shortDesc: "Timeless looks for your special day"
   }
 ];

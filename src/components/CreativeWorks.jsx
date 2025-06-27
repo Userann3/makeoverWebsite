@@ -1,4 +1,17 @@
 import React, { useState } from "react";
+import bride1 from '../assets/creativeWork/bride1.JPG'
+import bride2 from '../assets/creativeWork/bride2.JPG'
+import bride3 from '../assets/creativeWork/bride3.JPG'
+import eye1 from '../assets/creativeWork/eye1.JPG'
+import eye2 from '../assets/creativeWork/eye2.JPG'
+import eye3 from '../assets/creativeWork/eye3.JPG'
+import face1 from '../assets/creativeWork/face1.JPG'
+import face2 from '../assets/creativeWork/face2.JPG'
+import face3 from '../assets/creativeWork/face3.JPG'
+import hair1 from '../assets/creativeWork/hair1.PNG'
+import hair2 from '../assets/creativeWork/hair2.JPG'
+import hair3 from '../assets/creativeWork/hair3.JPG'
+
 
 const categories = ["All Works", "Face Makeup", "Eye Makeup", "Hair Styling", "Bridal Makeup"];
 
@@ -7,56 +20,74 @@ const portfolioItems = [
     id: 1,
     title: "Glamorous Evening Look",
     category: "Face Makeup",
-    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+    image: bride1
   },
   {
     id: 2,
     title: "Smokey Eye Design",
-    category: "Eye Makeup",
-    image: "https://images.unsplash.com/photo-1551836026-d1b5d30c0938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80"
+    category: "Bridal Makeup",
+    image: bride2
   },
   {
     id: 3,
     title: "Elegant Updo",
     category: "Hair Styling",
-    image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    image: hair1
   },
   {
     id: 4,
     title: "Classic Bridal",
     category: "Bridal Makeup",
-    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80"
+    image: face2
   },
   {
     id: 5,
     title: "Natural Glow",
     category: "Face Makeup",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80"
+    image: face1
   },
   {
     id: 6,
     title: "Dramatic Lashes",
     category: "Eye Makeup",
-    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+    image: eye1
   },
   {
     id: 7,
     title: "Beach Waves",
     category: "Hair Styling",
-    image: "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+    image: hair2
   },
   {
     id: 8,
     title: "Traditional Bride",
     category: "Bridal Makeup",
-    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+    image: bride3
   },
   {
     id: 9,
     title: "Contoured Perfection",
     category: "Face Makeup",
-    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
-  }
+    image: face3
+  },
+  {
+    id: 10,
+    title: "Contoured Perfection",
+    category: "Eye Makeup",
+    image: eye2
+  },
+  {
+    id: 11,
+    title: "Contoured Perfection",
+    category: "Hair Styling",
+    image: hair3
+  },
+  {
+    id: 12,
+    title: "Contoured Perfection",
+    category: "Eye Makeup",
+    image: eye3
+  },
 ];
 
 const CreativeWorks = () => {
