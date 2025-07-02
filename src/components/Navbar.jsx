@@ -80,6 +80,14 @@ const Navbar = () => {
             <NavLink to={'/about'} className="hover:text-rose-600 transition py-2 border-b border-rose-100" onClick={() => setIsMenuOpen(false)}>ABOUT ME</NavLink>
             <NavLink to={'/services'} className="hover:text-rose-600 transition py-2 border-b border-rose-100" onClick={() => setIsMenuOpen(false)}>SERVICES</NavLink>
             <NavLink to={'/portfolio'} className="hover:text-rose-600 transition py-2 border-b border-rose-100" onClick={() => setIsMenuOpen(false)}>PORTFOLIO</NavLink>
+                      <NavLink to={'/LEARN'} className="hover:text-rose-600 transition relative group">
+            MASTER CLASSES
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
+          </NavLink>
+          <NavLink to={'/Pricing'} className="hover:text-rose-600 transition relative group">
+            PRICING
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
+          </NavLink>
             {/* <NavLink to={'/'} className="hover:text-rose-600 transition py-2 border-b border-rose-100" onClick={() => setIsMenuOpen(false)}>LEARN</NavLink> */}
             {/* <NavLink to={'/'} className="hover:text-rose-600 transition py-2 border-b border-rose-100" onClick={() => setIsMenuOpen(false)}>CONTACT</NavLink> */}
           </nav>
