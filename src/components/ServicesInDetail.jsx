@@ -2,7 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaRegStar, FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import bride from '../assets/makeup/bride.PNG'
+import face from '../assets/creativeWork/face2.JPG'
+import eye from '../assets/makeup/eye.JPG'
+import hair from '../assets/creativeWork/hair2.JPG'
 const ServicesInDetail = () => {
   // Animation variants
   const containerVariants = {
@@ -40,7 +43,7 @@ const ServicesInDetail = () => {
         "Lasts 12+ hours"
       ],
       images: [
-        "https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80"
+        bride
       ],
       price: "Starting at $250"
     },
@@ -55,7 +58,7 @@ const ServicesInDetail = () => {
         "Non-comedogenic products"
       ],
       images: [
-        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+        face
       ],
       price: "Starting at $120"
     },
@@ -70,7 +73,7 @@ const ServicesInDetail = () => {
         "Hypoallergenic products"
       ],
       images: [
-        "https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+        eye
       ],
       price: "Starting at $80"
     },
@@ -85,7 +88,7 @@ const ServicesInDetail = () => {
         "Dry styling available"
       ],
       images: [
-        "https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+        hair
       ],
       price: "Starting at $90"
     }

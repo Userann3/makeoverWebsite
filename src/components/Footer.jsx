@@ -1,5 +1,5 @@
 import React from "react";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaInstagram, FaFacebookF, FaTwitter, FaPinterestP } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaInstagram, FaFacebookF, FaTwitter, FaPinterestP, FaYoutube } from "react-icons/fa";
 import LOGO2 from '../assets/LOGO2.png'
 import { Link } from "react-router-dom";
 const Footer = () => {
@@ -10,31 +10,44 @@ const Footer = () => {
         <div className="col-span-1 md:col-span-2 lg:col-span-1">
           <div className="mb-6">
             {/* Sample logo image - replace with your actual logo */}
-            <img 
-              src={LOGO2} 
-              alt="Makeup Studio Logo" 
+            <img
+              src={LOGO2}
+              alt="Makeup Studio Logo"
               className="h-16 w-auto object-contain"
             />
           </div>
           <p className="text-gray-700 mb-6">
-            At " Pawan Saini Makeovers ", we believe beauty begins with confidence. 
-            Our professional artists create personalized looks that enhance your 
+            At " Pawan Saini Makeovers ", we believe beauty begins with confidence.
+            Our professional artists create personalized looks that enhance your
             natural features for any occasion.
           </p>
           <div className="flex gap-4">
-            <Link to={""} className="text-rose-500 hover:text-rose-600 transition">
+            <a
+              href="https://www.instagram.com/pawansainimakeovers?igsh=dDhpNDdieDE0eTRr&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-rose-500 hover:text-rose-600 transition"
+            >
               <FaInstagram className="text-xl" />
-            </Link>
-            <Link to={""} className="text-rose-500 hover:text-rose-600 transition">
+            </a>
+            <a
+              href="https://facebook.com/share/16EEEwGMhT/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-rose-500 hover:text-rose-600 transition"
+            >
               <FaFacebookF className="text-xl" />
-            </Link>
-            <Link to={""} className="text-rose-500 hover:text-rose-600 transition">
-              <FaTwitter className="text-xl" />
-            </Link>
-            <Link to={""} className="text-rose-500 hover:text-rose-600 transition">
-              <FaPinterestP className="text-xl" />
-            </Link>
+            </a>
+            <a
+              href="https://www.youtube.com/@pawansainimakeoverss"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-rose-500 hover:text-rose-600 transition"
+            >
+              <FaYoutube className="text-xl" />
+            </a>
           </div>
+
         </div>
 
         {/* Quick Links */}
@@ -88,8 +101,7 @@ const Footer = () => {
             <li className="flex items-start gap-3">
               <FaPhone className="text-rose-500 mt-1 flex-shrink-0" />
               <span className="text-gray-700">
-                1800-121-3637 <br />
-                +91-7052-101-786
+                +91 9015908080
               </span>
             </li>
             <li className="flex items-start gap-3">

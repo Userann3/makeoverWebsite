@@ -42,7 +42,11 @@ const Navbar = () => {
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
           </NavLink>
           <NavLink to={'/LEARN'} className="hover:text-rose-600 transition relative group">
-            LEARN
+            MASTER CLASSES
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
+          </NavLink>
+          <NavLink to={'/Pricing'} className="hover:text-rose-600 transition relative group">
+            PRICING
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-rose-600 transition-all duration-300 group-hover:w-full"></span>
           </NavLink>
         </nav>

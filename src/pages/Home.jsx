@@ -8,6 +8,7 @@ import CreativeWorks from '../components/CreativeWorks'
 import TestimonialSection from '../components/TestimonialSection'
 import ContactForm from '../components/ContactForm'
 import MakeupClasses from '../components/MakeupClasses'
+import PricingCards from '../components/PricingCards'
 
 export default function Home() {
   return (
@@ -17,9 +18,10 @@ export default function Home() {
     <AboutSection/>
     <MakeupServices/>
     <CreativeWorks/>
-    <MakeupClasses/>
-    {/* <ContactForm/> */}
-    <TestimonialSection/>
+    {/* <MakeupClasses/> */}
+    <PricingCards/>
+    <ContactForm/>
+    {/* <TestimonialSection/> */}
     <Footer/>
     </>
   )

@@ -8,6 +8,9 @@ import Portfolio from './pages/Portfolio'
 import Learn from './pages/Learn'
 import Contact from './pages/Contact'
 import ScrollToTop from './components/ScrollToTop'
+import Pricing from './pages/Pricing'
+import FloatingWhatsApp from './components/FloatingWhatsApp'
+import SocialMenu from './components/SocialMenu'
 
 export default function App() {
   return (
@@ -21,7 +24,10 @@ export default function App() {
           <Route path='/portfolio' element={<Portfolio/>}/>
           <Route path='/Learn' element={<Learn/>}/>
           <Route path='/contact' element={<Contact/>}/>
+          <Route path='/pricing' element={<Pricing/>}/>
         </Routes>
+        {/* <FloatingWhatsApp/> */}
+        <SocialMenu/>
       </BrowserRouter>
     </>
   )

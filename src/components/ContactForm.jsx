@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaPaperPlane, FaUser, FaEnvelope, FaComment, FaMapMarkerAlt, FaPhone, FaClock, FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
+import { FaPaperPlane, FaUser, FaEnvelope, FaComment, FaMapMarkerAlt, FaPhone, FaClock, FaInstagram, FaYoutube, FaLinkedin, FaFacebook } from "react-icons/fa";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -117,7 +117,8 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-900">Our Location</h3>
-                    <p className="text-gray-600">123 Beauty Street, Makeup City</p>
+                    <p className="text-gray-600">Metro Station, D-20A Sarpanch Colony, NH-19, near by Neelam Chowk, Ajronda, Faridabad, Haryana 121007
+                      LHB Colony, Kanpur</p>
                   </div>
                 </div>
 
@@ -127,7 +128,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-900">Phone Number</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
+                    <p className="text-gray-600">+91 9015908080</p>
                   </div>
                 </div>
 
@@ -137,7 +138,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h3 className="font-medium text-gray-900">Email Address</h3>
-                    <p className="text-gray-600">contact@beautyexample.com</p>
+                    <p className="text-gray-600">pawansainimakeovers@gmail.com</p>
                   </div>
                 </div>
 
@@ -159,7 +160,9 @@ const ContactForm = () => {
               <h3 className="font-medium text-gray-900 mb-4">Follow Us</h3>
               <div className="flex space-x-4">
                 <motion.a
-                  href="#"
+                  href="https://www.instagram.com/pawansainimakeovers?igsh=dDhpNDdieDE0eTRr&utm_source=qr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-gradient-to-br from-pink-500 to-purple-600 text-white p-3 rounded-full transition-colors"
                   whileHover={{ y: -3 }}
                 >
@@ -168,7 +171,9 @@ const ContactForm = () => {
                 </motion.a>
 
                 <motion.a
-                  href="#"
+                  href="https://www.youtube.com/@pawansainimakeoverss"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-red-600 text-white p-3 rounded-full transition-colors"
                   whileHover={{ y: -3 }}
                 >
@@ -177,12 +182,14 @@ const ContactForm = () => {
                 </motion.a>
 
                 <motion.a
-                  href="#"
+                  href="https://facebook.com/share/16EEEwGMhT/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-blue-600 text-white p-3 rounded-full transition-colors"
                   whileHover={{ y: -3 }}
                 >
-                  <span className="sr-only">LinkedIn</span>
-                  <FaLinkedin className="text-lg" />
+                  <span className="sr-only">Facebook</span>
+                  <FaFacebook className="text-lg" />
                 </motion.a>
               </div>
             </motion.div>
