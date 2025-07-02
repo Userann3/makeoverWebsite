@@ -129,9 +129,9 @@ const MasterClassesList = () => {
                       </li>
                     ))}
                   </ul>
-                  <button className="w-full mt-4 bg-gradient-to-r from-rose-500 to-pink-500 text-white py-2 px-4 rounded-lg font-medium hover:opacity-90 transition duration-300">
+                  {/* <button className="w-full mt-4 bg-gradient-to-r from-rose-500 to-pink-500 text-white py-2 px-4 rounded-lg font-medium hover:opacity-90 transition duration-300">
                     Enroll Now
-                  </button>
+                  </button> */}
                 </div>
               </motion.div>
             ))}
@@ -183,9 +183,9 @@ const MasterClassesList = () => {
                       </li>
                     ))}
                   </ul>
-                  <button className="w-full mt-4 bg-gradient-to-r from-purple-500 to-indigo-500 text-white py-2 px-4 rounded-lg font-medium hover:opacity-90 transition duration-300">
+                  {/* <button className="w-full mt-4 bg-gradient-to-r from-purple-500 to-indigo-500 text-white py-2 px-4 rounded-lg font-medium hover:opacity-90 transition duration-300">
                     Enroll Now
-                  </button>
+                  </button> */}
                 </div>
               </motion.div>
             ))}
