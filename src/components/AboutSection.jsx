@@ -2,9 +2,9 @@ import React from "react";
 import { useState , useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import pawan from "../assets/makeup/pawan.JPG";
-import pawanAward from "../assets/pawan/pawanAward.jpeg";
-import pawan3 from "../assets/pawan/pawan3.jpeg";
+import pawan from "../assets/makeup/pawan.webp";
+import pawanAward from "../assets/pawan/pawanAward.webp";
+import pawan3 from "../assets/pawan/pawan3.webp";
 
 const AboutSection = () => {
     const [hasAnimated, setHasAnimated] = useState(false);
