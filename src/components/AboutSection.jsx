@@ -1,12 +1,13 @@
 import React from "react";
+import { useState , useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import pawan from "../assets/makeup/pawan.JPG";
 import pawanAward from "../assets/pawan/pawanAward.jpeg";
 import pawan3 from "../assets/pawan/pawan3.jpeg";
 
-
 const AboutSection = () => {
+    const [hasAnimated, setHasAnimated] = useState(false);
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -55,14 +56,19 @@ const AboutSection = () => {
       }
     }
   };
+    useEffect(() => {
+    return () => {
+      // Mark as animated when unmounting
+      setHasAnimated(true);
+    };
+  }, []);
 
   return (
     <section className="w-full bg-gradient-to-b from-rose-50 to-indigo-50 py-20">
       <motion.div 
         className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
+        initial={hasAnimated ? "visible" : "hidden"}
+        animate="visible"
         variants={containerVariants}
       >
         {/* Left side - images */}

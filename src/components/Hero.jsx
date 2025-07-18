@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import pawanMain from '../assets/pawan/pawanMain.webp';
 import pawan1 from '../assets/pawan/pawan1.webp';
@@ -10,47 +10,71 @@ const sliderImages = [
   pawan2
 ];
 
-// Preload images function
-const preloadImages = (images) => {
-  images.forEach(src => {
-    const img = new Image();
-    img.src = src;
-    img.fetchPriority = 'high'; // Prioritize image loading
-  });
-};
+// Cache for loaded images
+const imageCache = {};
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const intervalRef = useRef(null);
+  const heroRef = useRef(null);
 
-  // Preload images on component mount
+  // Preload images on component mount (only once)
   useEffect(() => {
-    preloadImages(sliderImages);
-    
-    // Set a flag when images are loaded (simplified approach)
-    const timer = setTimeout(() => {
+    if (Object.keys(imageCache).length === 0) {
+      sliderImages.forEach(src => {
+        if (!imageCache[src]) {
+          const img = new Image();
+          img.src = src;
+          img.fetchPriority = 'high';
+          imageCache[src] = true;
+        }
+      });
+      
+      // Set loaded after a small delay
+      const timer = setTimeout(() => {
+        setImagesLoaded(true);
+      }, 300);
+      
+      return () => clearTimeout(timer);
+    } else {
       setImagesLoaded(true);
-    }, 300); // Small delay to allow preload to start
-    
-    return () => clearTimeout(timer);
+    }
   }, []);
 
-  // Auto-rotate images every 5 seconds
+  // Auto-rotate images every 5 seconds (persistent interval)
   useEffect(() => {
     if (!imagesLoaded) return;
     
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) =>
-        prevIndex === sliderImages.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
+    // Only set interval if not already set
+    if (!intervalRef.current) {
+      intervalRef.current = setInterval(() => {
+        setCurrentImageIndex(prev => (prev === sliderImages.length - 1 ? 0 : prev + 1));
+      }, 5000);
+    }
     
-    return () => clearInterval(interval);
+    return () => {
+      // Don't clear interval when unmounting to maintain state
+      // Interval will be cleared only when component is permanently unmounted
+    };
   }, [imagesLoaded]);
 
+  // Cleanup interval when component is permanently unmounted
+  useEffect(() => {
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+  }, []);
+
   return (
-    <section className="w-full min-h-screen bg-gradient-to-r from-rose-50 to-indigo-50 relative overflow-hidden">
-      {/* Background decorative elements (simplified) */}
+    <section 
+      ref={heroRef}
+      className="w-full min-h-screen bg-gradient-to-r from-rose-50 to-indigo-50 relative overflow-hidden"
+    >
+      {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute top-20 left-20 w-64 h-64 bg-rose-200 rounded-full mix-blend-multiply filter blur-xl opacity-20" />
         <div className="absolute bottom-20 right-32 w-64 h-64 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-20" />
@@ -87,8 +111,10 @@ const Hero = () => {
         {/* Right side - Simple Image Slider */}
         <div className="md:w-1/2 flex justify-center">
           <div className="relative w-full max-w-md h-auto overflow-hidden">
-            <div className="flex transition-transform duration-500 ease-in-out"
-                 style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}>
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
+            >
               {sliderImages.map((image, index) => (
                 <div key={index} className="w-full flex-shrink-0">
                   <img
@@ -113,8 +139,6 @@ const Hero = () => {
                 />
               ))}
             </div>
-
-            {/* <div className="absolute -bottom-6 -right-6 w-full h-full border-4 rounded-lg z-0" /> */}
           </div>
         </div>
       </div>
