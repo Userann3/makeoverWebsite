@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import pawanMain from '../assets/pawan/pawanMain.jpeg'
-import pawan1 from '../assets/pawan/pawan1.jpeg'
-import pawan2 from '../assets/pawan/pawan2.jpg'
-import pawan3 from '../assets/pawan/pawan3.jpeg'
-import pawan4 from '../assets/pawan/pawan4.jpeg'
+import pawanMain from '../assets/pawan/pawanMain.webp'
+import pawan1 from '../assets/pawan/pawan1.webp'
+import pawan2 from '../assets/pawan/pawan2.webp'
+import pawan3 from '../assets/pawan/pawan3.webp'
+import pawan4 from '../assets/pawan/pawan4.webp'
 import { AnimatePresence } from "framer-motion";
 
 
