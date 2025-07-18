@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import pawanMain from '../assets/pawan/pawanMain.webp'
 import pawan1 from '../assets/pawan/pawan1.webp'
 import pawan2 from '../assets/pawan/pawan2.webp'
-import pawan3 from '../assets/pawan/pawan3.webp'
-import pawan4 from '../assets/pawan/pawan4.webp'
+// import pawan3 from '../assets/pawan/pawan3.webp'
+// import pawan4 from '../assets/pawan/pawan4.webp'
 import { AnimatePresence } from "framer-motion";
 
 
@@ -13,9 +13,9 @@ import { AnimatePresence } from "framer-motion";
 const sliderImages = [
   pawanMain,
   pawan1,
-  pawan2,
-  pawan3,
-  pawan4
+  pawan2
+  // pawan3,
+  // pawan4
 ];
 
 const Hero = () => {
@@ -174,7 +174,9 @@ const Hero = () => {
                 exit="exit"
                 transition={{ duration: 0.8, ease: "easeInOut" }}
                 whileHover={{ scale: 1.02 }}
+                loading={currentImageIndex === 0 ? "eager" : "lazy"}
               />
+
             </AnimatePresence>
 
             {/* Image slider indicators */}
